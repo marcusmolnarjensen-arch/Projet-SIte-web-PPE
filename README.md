@@ -51,6 +51,9 @@ Erreurs rencontrées :
 
 Résultat final : 0 erreur, 0 warning.
 
+j'ai aussi ajouté 4 pages web vides que je remplirais a plus tard et un petit trait esthétique au centre pour que ce soit joli
+<img width="1821" height="583" alt="image" src="https://github.com/user-attachments/assets/ec5f14eb-2f96-476a-b6cc-fe292700729d" />
+
 ## Accessibilité
 ### Avant corrections
 - Pas de `<main>` : aucun repère de contenu principal pour un lecteur d'écran

@@ -52,6 +52,7 @@ Erreurs rencontrées :
 Résultat final : 0 erreur, 0 warning.
 
 j'ai aussi ajouté 4 pages web vides que je remplirais a plus tard et un petit trait esthétique au centre pour que ce soit joli
+<img width="1840" height="843" alt="image" src="https://github.com/user-attachments/assets/c9edcfa6-e224-4f4c-b2aa-66a01ef0afb4" />
 <img width="1821" height="583" alt="image" src="https://github.com/user-attachments/assets/ec5f14eb-2f96-476a-b6cc-fe292700729d" />
 
 ## Accessibilité

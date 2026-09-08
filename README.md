@@ -43,13 +43,9 @@ Erreurs rencontrées :
 - Espace dans un nom de fichier image (`src` invalide)
 - Saut de niveau de titre (h2 → h4)
 
-**Erreur de nom de fichier (espace dans le src) :**
-
+**Erreur de nom de fichier (espace dans le nom du fichier) :**
+**Après correction :** : fichier renommé pour retirer l'espace.
 ![Erreur espace dans le nom de fichier](https://github.com/user-attachments/assets/30292d36-6b8a-4a4c-95ed-82cc0e18bd2e)
-
-Correction : fichier renommé pour retirer l'espace.
-
-**Après correction :**
 
 ![Validateur W3C après correction, 0 erreur](https://github.com/user-attachments/assets/da5a443b-35cc-412c-9c86-a72b6eebb8ce)
 

@@ -1,3 +1,25 @@
+/* ==========================================================================
+   VARIABLES CSS (Centralisation des couleurs et espacements)
+   ========================================================================== */
+:root {
+    --bg-button: #edf0e1;
+    --bg-button-hover: #f5b650;
+    --text-color: #474343;
+    --text-dark: #040404;
+    --border-color: #555555;
+    
+    --space-xs: 8px;
+    --space-sm: 15px;
+    --space-md: 30px;
+    --space-lg: 40px;
+    
+    --breakpoint-mobile: 480px;  /* Justification: Ciblage smart-phones / petits écrans */
+    --breakpoint-tablet: 850px;  /* Justification: Bascule vers affichage desktop/tablette large */
+}
+
+/* ==========================================================================
+   RESET & BASE (MOBILE-FIRST par défaut)
+   ========================================================================== */
 * {
     box-sizing: border-box;
 }
@@ -18,28 +40,26 @@ html, body {
     object-fit: cover;
     z-index: -1; 
     opacity: 0.3;
-
     -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 80%);
     mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 80%);
-    
     pointer-events: none;
 }
 
 a.liste, button {
     border: none;
     outline: 1px solid black;
-    background-color: #edf0e1;
-    padding: 8px 16px;
+    background-color: var(--bg-button);
+    padding: var(--space-xs) 16px;
     border-radius: 6px;
-    color: #47434372;
+    color: var(--text-color);
     cursor: pointer;
     text-decoration: none;
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 a.liste:hover, button:hover {
-    background-color: #f5b650;
-    color: #040404;
+    background-color: var(--bg-button-hover);
+    color: var(--text-dark);
 }
 
 .hero {
@@ -58,34 +78,35 @@ a.liste:hover, button:hover {
     white-space: nowrap;
 }
 
+/* Navigation - Mobile First */
 nav ul {
     width: 100%;
     display: flex;
     justify-content: center;
-    gap: 35px;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
     list-style: none;
     padding: 0; 
     margin: 20px 0;
 }
 
+/*
+   INTEGRATION GRID & LAYOUT (MOBILE FIRST)
+   Les conteneurs principaux utilisent CSS Grid pour aligner le texte et les visuels.
+*/
 .bodies, .bodies2 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 40px;
+    display: grid;
+    grid-template-columns: 1fr; /* 1 seule colonne en mobile */
+    gap: var(--space-md);
     max-width: 1150px;
-    width: 90%;
-    margin: 40px auto 0 auto;
-    text-align: left;
-}
-
-.bodies > h4, .bodies2 > h4 {
-    flex: 1;
-    margin: 0;
-}
-
-.bodies2 {
+    width: 100%;
+    margin: var(--space-lg) auto 0 auto;
     text-align: center;
+    font-size: 1em;
+}
+
+.bodies > h2, .bodies2 > h2 {
+    margin: 0;
 }
 
 .village {
@@ -93,7 +114,7 @@ nav ul {
     width: 100%;
     max-width: 100%;
     height: auto;
-    margin-top: 15px;
+    margin-top: var(--space-sm);
 }
 
 .image2 {
@@ -103,7 +124,7 @@ nav ul {
     height: auto;
     max-height: 250px;
     object-fit: cover;
-    margin-top: 4.8rem;
+    margin-top: 2rem;
 }
 
 .footer {
@@ -111,17 +132,72 @@ nav ul {
     text-align: center;
 }
 
-@media screen and (max-width: 850px) {
-    .bodies, .bodies2 {
-        flex-direction: column;
-        gap: 30px;
-        text-align: center;
-    }
+/* Diviseur personnalisé */
+.custom-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: var(--space-md) 0;
+}
 
+.custom-divider::before,
+.custom-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+}
+
+.custom-divider::before {
+    background: linear-gradient(to right, transparent, var(--border-color));
+}
+
+.custom-divider::after {
+    background: linear-gradient(to left, transparent, var(--border-color));
+}
+
+.custom-divider .circle {
+    width: 25px;
+    height: 25px;
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    margin: 0 var(--space-sm);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+    flex-shrink: 0;
+}
+
+/* ==========================================================================
+   RESPONSIVE - ENRICHISSEMENT PROGRESSIF (MEDIA QUERIES MIN-WIDTH)
+   ========================================================================== */
+
+/* BREAKPOINT 1 : Smartphone moyen vers Tablette (480px) */
+/* Justification : Ajustement des marges et espacements du menu pour petits écrans */
+@media screen and (min-width: 480px) {
     nav ul {
-        gap: 15px;
-        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .image2 {
+        margin-top: 3rem;
     }
 }
 
+/* BREAKPOINT 2 : Tablette vers Desktop (850px) */
+/* Justification : Passage du layout 1 colonne vers 2 colonnes (Grid desktop) */
+@media screen and (min-width: 850px) {
+    nav ul {
+        gap: 35px;
+        flex-wrap: nowrap;
+    }
 
+    .bodies, .bodies2 {
+        grid-template-columns: 1fr 1fr; /* Passage sur 2 colonnes via Grid */
+        gap: var(--space-lg);
+        text-align: left;
+        width: 110%;
+    }
+
+    .image2 {
+        width: 150%;
+        margin-top: 5rem;
+    }
+}

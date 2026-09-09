@@ -103,5 +103,6 @@ La feuille de style est désormais construite en **Mobile-First** (styles de bas
 | **768px** (Tablette) | ✅ Validé | ✅ Validé | Marges adaptées, navigation lisible. |
 | **1200px** (Desktop) | ✅ Validé | ✅ Validé | Disposition 2 colonnes via Grid, conforme au design. |
 
+ajout d'un formulaire pour les dons 
 ## Publication
 - URL du site en ligne : [à compléter]

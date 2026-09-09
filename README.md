@@ -55,6 +55,11 @@ j'ai aussi ajouté 4 pages web vides que je remplirais a plus tard et un petit t
 <img width="1840" height="843" alt="image" src="https://github.com/user-attachments/assets/c9edcfa6-e224-4f4c-b2aa-66a01ef0afb4" />
 <img width="1821" height="583" alt="image" src="https://github.com/user-attachments/assets/ec5f14eb-2f96-476a-b6cc-fe292700729d" />
 
+j'ai refait le site de sorte a ce qu'il soit mobile first
+<img width="2516" height="1325" alt="image" src="https://github.com/user-attachments/assets/48cba783-4e00-4598-b7ea-ae3ce37fc38a" />
+<img width="881" height="1074" alt="image" src="https://github.com/user-attachments/assets/d755c34d-5ffa-4b3b-bce1-b4a3b808ebca" />
+<img width="1446" height="948" alt="image" src="https://github.com/user-attachments/assets/0875b8d0-d975-4d1e-ba22-4a2a505843ad" />
+
 ## Accessibilité
 ### Avant corrections
 - Pas de `<main>` : aucun repère de contenu principal pour un lecteur d'écran
@@ -70,9 +75,33 @@ j'ai aussi ajouté 4 pages web vides que je remplirais a plus tard et un petit t
 - Hiérarchie de titres réparée (h1 → h2, sans saut)
 
 ### Tests effectués
-- Navigation clavier : [à compléter]
-- Lecteur d'écran ([NVDA/VoiceOver]) : [à compléter]
-- Contraste (WebAIM Contrast Checker) : [à compléter]
+- Navigation clavier : effectué et fonctionnel
+- Lecteur d'écran : structuration sémantique validée
+- Contraste (WebAIM Contrast Checker) : conforme aux exigences AA
+
+## Refactorisation Projet 2 (CSS Moderne & Responsive)
+
+### 1. Variables CSS (`:root`)
+Centralisation des styles clés en haut du fichier CSS :
+- Couleurs (`--bg-button`, `--bg-button-hover`, `--text-color`, `--text-dark`, `--border-color`)
+- Espacements (`--space-xs`, `--space-sm`, `--space-md`, `--space-lg`)
+
+### 2. Dispositions Flexbox & Grid
+- **CSS Grid** : Appliqué sur les conteneurs `.bodies` et `.bodies2` pour la structure globale des blocs de contenu.
+- **Flexbox** : Utilisé pour la barre de navigation (`nav ul`) et le séparateur personnalisé (`.custom-divider`).
+
+### 3. Approche Mobile-First et Justification des Breakpoints
+La feuille de style est désormais construite en **Mobile-First** (styles de base pour petits écrans, puis enrichissement via `min-width`) :
+- **`@media (min-width: 480px)`** : Ajustement des espacements du menu et des éléments sur mobile large/tablette.
+- **`@media (min-width: 850px)`** : Passage de la grille d'une colonne (mobile) à deux colonnes (`grid-template-columns: 1fr 1fr`) pour l'affichage ordinateur.
+
+### 4. Matrice de vérification multi-largeurs et navigateurs
+
+| Largeur testée | Google Chrome | Mozilla Firefox | Résultat |
+| :--- | :--- | :--- | :--- |
+| **375px** (Mobile) | ✅ Validé | ✅ Validé | Affichage 1 colonne fluide, aucun scroll horizontal. |
+| **768px** (Tablette) | ✅ Validé | ✅ Validé | Marges adaptées, navigation lisible. |
+| **1200px** (Desktop) | ✅ Validé | ✅ Validé | Disposition 2 colonnes via Grid, conforme au design. |
 
 ## Publication
 - URL du site en ligne : [à compléter]

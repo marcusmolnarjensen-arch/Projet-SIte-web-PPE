@@ -103,6 +103,11 @@ La feuille de style est désormais construite en **Mobile-First** (styles de bas
 | **768px** (Tablette) | ✅ Validé | ✅ Validé | Marges adaptées, navigation lisible. |
 | **1200px** (Desktop) | ✅ Validé | ✅ Validé | Disposition 2 colonnes via Grid, conforme au design. |
 
-ajout d'un formulaire pour les dons 
+ajout d'un formulaire pour les dons
+
+### 5. Ajout d'un formulaire et de l'affichage + tri des infos 
+<img width="1873" height="955" alt="image" src="https://github.com/user-attachments/assets/40fa15b9-3926-4b92-a6e7-7f19cdc957e8" />
+
+normalement avec tout ça je remplis les 3 premiers projets
 ## Publication
 - URL du site en ligne : [à compléter]
